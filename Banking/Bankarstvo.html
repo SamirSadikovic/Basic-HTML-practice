@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Online Bankarstvo</title>
+<style>
+body {
+background-color:rgb(230, 242, 255);
+font-size:18px;
+}
+
+h1 {
+letter-spacing:3px;
+font-size:45px;
+color:blue;
+text-align:center;
+}
+
+h2 {
+text-align:center;
+text-decoration:underline;
+color:#000080;
+}
+
+.menu {
+background-color:rgb(50,50,50);
+color:white;
+overflow:hidden;
+list-style-type:none;
+margin:0;
+padding:0;
+display:inline-block;
+text-aling:center;
+width:800px;
+}
+
+.limenu {
+width:200px;
+text-align:center;
+float:left;
+}
+
+a.list {
+text-decoration:none;
+color:white;
+display:inline-block;
+padding:14px 16px;
+text-align:center;
+}
+
+p {
+text-align:justify;
+}
+
+img {
+border: 10px solid rgb(230, 242, 255);
+width:500px;
+height:200px;
+}
+
+.imgdec {
+font-size:14px;
+text-align:center;
+font-style:italic;
+}
+
+table {
+border-collapse:collapse;
+}
+
+td {
+border:2px solid blue;
+}
+
+div.first {
+float:left;
+display:inline-block;
+}
+
+div.second {
+float:right;
+display:inline-block;
+}
+
+</style>
+<body>
+<h1>ONLINE BANKARSTVO</h1>
+<br>
+<center><ul class="menu">
+  <li class="limenu"><a class="list" href="#eBank">eBanking</a></li>
+  <li class="limenu"><a class="list" href="#na">Načini Autorizacije</a></li>
+  <li class="limenu"><a class="list" href="#zp">Zaštita Podataka</a></li>
+  <li class="limenu"><a class="list" href="#iu">Internet Usluge</a></li>
+</ul></center>
+<br><hr><br>
+<h2 id="eBank">E-BANKING</h2>
+<br>
+<p><b>Internet bankarstvo</b> je finansijski servis neke banke koji omogućava korisniku direktno obavljanje i pregled 
+finansijskih transakcija i stanja računa, a kao komunikacijski kanal koristi internet.Prije korištenja bilo kakve 
+usluge internet bankarstva ili obavljanja transakcije, potrebno je autorizovati se. Postoji nekoliko načina 
+autorizacije (tokeni, TAN-ovi, smart kartice). Ovisno o banci i tehnološkoj pozadini, nudi se jedna od 
+spomenutih načina autorizacije. Ponekad banke nude i izbor između dvije različite metode.</p>
+<center><img src="eBank.jpg" width="500px" height="200px"><img src="eBank2.jpg" width="500px" height="200px"></center>
+<br><br><br>
+
+<h2 id="na">NAČINI AUTORIZACIJE</h2>
+<br>
+<h3>Token</h3>
+<p>Token je uređaj nalik džepnom kalkulatoru. Ovakav se uređaj ustupa klijentu na privremeno korištenje prilikom 
+registracije za usluge Online bankarstva. Prilikom odjave, korisnik je dužan vratiti uređaj banci od koje je dobio isti.
+Numeričke tipke na TOKEN-u omogućavaju korisniku unos PIN-a (Personal Identification Number), koji je neophodan za uspješnu autorizaciju.</p>
+<center><img src="token1.png" width="500px" height="200px"><img src="token2.png" width="500px" height="200px"><br></center>
+<p class="imgdec">Primjeri Tokena</p>
+<br><br>
+
+<h3>PIN</h3>
+<p><b>PIN</b> je broj od 4 do 8 znamenki. Banka ustupa PIN korisniku. Nakon prve autorizacije, korisnik ima mogućnost 
+da <b>promijeni PIN</b> kojim otključava uređaj. Nakon autorizacije, token generiše niz brojeva, koji se zajedno sa 
+serijskim brojem tokena, mora unijeti u aplikaciju. Serijski broj svakog tokena je jedinstven i sačinjava dio 
+kriptografskog ključa koji omogućuje generiranje dinamičkog koda za pristup mreži.</p>
+<p>Pri autorizaciji i validaciji podataka, poslužitelj generiše numeričku vrijednost sačinjenu od 6 znamenki. 
+Te se znamenke dobiju iz datuma, tj. vremena izvođenja transakcije i iz vrijednosti novčane transakcije. 
+Da bi se transakcija uspješno sprovela, klijent mora unijeti dobiveni broj u token, koji nakon toga generiše 
+novi broj od 6 znamenki i može se iskoristiti samo za izvođenje trenutne transakcije (jednokratna upotreba). 
+Klijent ima određeni vremenski period u kojem mora unijeti generisani niz, obično od 30 do 60 sekundi nakon čega 
+se token automatski isključuje. Ovakav model autorizacije koji se sastoji od 2 faktora:
+<ul>
+   <li>Serijskog broja tokena</li>
+   <li>Niz brojeva koje token generiše</li>
+</ul>
+<p><b>Sigurnosni mehanizam</b> ugrađen u token je usklađen s poslužiteljem koji provjerava parametre autorizacije. 
+Ako klijent unese pogrešan PIN nekoliko puta za redom, npr 3 puta, token se <b>automatski zaključa</b>. 
+Jedino administrator ima mogućnost da otključa isti. Ukoliko se unese neispravan kod za autorizaciju korisnika, 
+web aplikacija se terminira. Svaki takav pokušaj se zabilježi kod poslužitelja. Administrator pregleda 
+zabilješke i na taj način može uočiti sumnjive radnje pri autorizaciji.</p>
+<br><br>
+
+<h3>TAN</h3>
+<p>Autorizacija putem TAN-ova obično podrazumijeva list papira sa pedesetak ili stotinjak nizova znamenki 
+koje korisnik dobija od banke. Kada korisnik iskoristi sve nizove sa liste, banka mu pošalje novu listu.</p>
+<center><img src="tan.jpg" width="500px" height="200px"><br></center>
+<p>Pojedine banke izdaju karticu sa određenim brojem TAN-ova koje korisnik kružno koristi pri čemu nema potrebe 
+za dostavljanjem novih TAN-ova. TAN-ovi izgledaju poput telefonskih brojeva pa je time smanjena opasnost 
+zloupotrebe u slučaju krađe ili provale. <i>Velika prednost</i> ove metode autorizacije jeste to što ne zahtjeva 
+nošenje uređaja za obavljanje bankarskih transakcija. Korisnik može sa sobom uvijek imati nekoliko TAN-ova u 
+slučaju potrebe za obavljanjem neke transakcije. <i>Veliki nedostatak</i> TAN-ova čini teška administracija. 
+Banka mora čuvati u svojoj bazi popis TAN-ova za svakog korisnika, kako potrošenih, tako i tek dodijeljenih.</p>
+<br><br>
+
+<h3>Smart Kartice</h3>
+<p>Smart-kartica je kartica u kojoj se nalazi ili mikroprocesor ili memorijski čip sa neprogramabilnom logikom. 
+Na kartici koja sadrži mikroprocesor postoji mogučnost upisivanja, brisanja podataka ili neke druge vrste 
+manipulacije podacima. Kartica koja ima samo memorijski čip može izvoditi samo predefinirane funkcije. 
+Smart-kartice, za razliku od kartica sa magnetskom trakom, sadrže sve potrebne funkcije i informacije potrebne 
+za autorizaciju, zbog čega u trenutku transakcije nije potreban pristup udaljenim bazama podataka. 
+Kako bi se mogle koristiti, potreban je čitač smart-kartica koji mora biti instaliran na računaru. 
+Čitač, kao i softver potreban za instalaciju čitača na računalo, korisnik mora kupiti do banke pri registraciji 
+za uslugu. <br><b>Najčešće primjene Smart Kartica</b>:
+<ol>
+   <li>kreditne kartice</li>
+   <li>elektroničke kartice</li>
+   <li>za Internet bankarstvo</li>
+   <li>kod kodiranih satelitskih programa</li>
+   <li>kao identifikacije u vladinim institucijama</li>
+   <li>kod bežične komunikacije</li>
+   <li>kod računalnih sigurnosnih sustava</li>
+   <li>kod mobilnih uređaja na karticu</li>
+</ol>
+</p>
+<center><img src="smart.png"><img src="smartread.png"><br></center>
+<p class="imgdec">Smart Kartica i čitač Smart Kartica</p>
+<br><br>
+
+<h3>PKI (Public Key Infrastructure)</h3>
+<p>Kartica se temelji na PKI (Public Key Infrastructure) tehnologiji koja se zasniva na <b>asimetričnoj 
+kriptografiji</b>, odnosno na paru javnih i tajnih ključeva za šifriranje podataka. Svaki korisnik ima svoj 
+<b>tajni ključ</b> i svoj <b>javni ključ</b>. Samo je javni ključ korisnika dan drugima na uvid. Korisnik podatke koje želi nekome 
+poslati šifrira svojim tajnim ključem. Kada bi se takvi podaci poslali, pročitati bi ih mogao svako ko posjeduje 
+javni ključ pošiljaoca. Iz tog razloga pošiljaoc šifrira podatke još jedanput, ovaj put javnim ključem primaoca 
+podataka. Na taj su načim podaci dostupni samo primaocu. Primatelj ih mora dešifrovati najprije pošiljaocevim 
+javnim ključem, a zatim i svojim tajnim ključem. Svi ti ključevi su pohranjeni na smart-kartici u digitalnom obliku.</p>
+<br><br><br>
+
+<h2 id="zp">ZAŠTITA PODATAKA</h2>
+<br>
+<p>Za <b>Internet bankarstvo</b> posebno je važan visoki stepen zaštite podataka jer se mrežom prenose sadržaji za koje 
+pošiljaoc i primaoc ne bi htjeli da budu viđeni od strane drugih. To su poslovni podaci kao npr. brojevi 
+kreditnih kartica, nalozi za transfere i slično. Povjerljivi sadržaji se uglavnom nastoje zaštititi od 
+neautoriziranih osoba na način da se šifriraju. Pošiljatelj šifrira sadržaj poruke prije njena slanja, a 
+primatelj je dešifrira po primanju. Treće osobe na mreži mogu vidjeti samo šifrirane podatke.</p>
+<p>Osim zaštite tajnosti sadržaja, ti sistemi za šifriranje poruka upotrebljavaju se i radi utvrđivanja identiteta sagovornika 
+te radi sprječavanja neovlaštene izmjene sadržaja.</p>
+<p>U procesu komunikacije važno je biti siguran da je udaljeni 
+primaoc/pošiljaoc stvarno onaj za kojeg se predstavlja, a ne neko ko je presreo poruku te je može izmijeniti ili 
+može pročitati brojeve kreditnih kartica koje kasnije može zloupotrijebiti. U ovu se svrhu upotrebljava 
+elektronički potpis. Elektronički potpis je skup podataka u elektroničkom obliku. Ti su podaci pridruženi ili 
+logički povezani i služe za identifikaciju potpisnika i vjerodostojnosti potpisanoga elektroničkog dokumenta. 
+Šifriranje i dešifriranje poruka izvodi se prema posebnim algoritmima (koji mogu biti softverski i hardverski) 
+te uz primjenu ključeva za šifriranje i dešifriranje. Postoje razne vrste algoritama koji su razvijeni u 
+tu svrhu, a ključevi mogu biti tajni i javni.</p>
+
+<h2 id="iu">INTERNET USLUGE</h2>
+<br>
+<p>Banke danas nude širok spektar usluga koje se mogu obaviti putem <b>Interneta</b>. Izvršavanje tih usluga putem 
+Interneta nije ništa manje kvalitetno ili nesigurnije od njihovog obavljanja u banci. Ovakve usluge korisnicima 
+ušteđuju vrijeme te olakšavaju izvršavanje usluga kod kuće. Usluge Internet bankarstva dijele se na one 
+namijenjene građanima i one namijenjene pravnim osobama.</p>
+<br>
+<div class="first">
+<table>
+<caption><h3>Standardna ponuda za građane</h3></caption>
+   <tr>
+       <td>Pregled stanja na računu</td>
+  </tr>
+   <tr>
+       <td>Provjera iznosa dopuštenog prekoračenja i vremenskog roka</td>
+  </tr>
+   <tr>
+       <td>Ispis potvrda o transakcijama</td>
+  </tr>
+   <tr>
+       <td>Prebacivanje novca s jednog na drugi račun</td>
+  </tr>
+   <tr>
+       <td>Uvid u kamate po računima</td>
+  </tr>
+   <tr>
+       <td>Kupovina i prodaja deviza</td>
+  </tr>
+   <tr>
+       <td>Plaćanje računa od kreditnih kartica</td>
+  </tr>
+   <tr>
+       <td>Provjera kartičnih limita</td>
+  </tr>
+   <tr>
+       <td>Provjera broja neiskorištenih čekova i narudžba novih</td>
+  </tr>
+   <tr>
+       <td>Pregled i uplata stambene štednje</td>
+  </tr>
+   <tr>
+       <td>Pregled tečajnih lista banke</td>
+  </tr>
+</table>
+</div>
+<div class="second">
+<table>
+<caption><h3>Platni promet za pravne osobe</h3></caption>
+   <tr>
+       <td>Stanja i prometi</td>
+  </tr>
+   <tr>
+       <td>Izvještaj: prikaz (printanje i lokalno spremanje) i datoteka (file download)</td>
+  </tr>
+   <tr>
+       <td>Nalozi za plaćanje</td>
+  </tr>
+   <tr>
+       <td>Pojedinačni nalozi</td>
+  </tr>
+   <tr>
+       <td>Nalozi za obračunska plaćanja</td>
+  </tr>
+   <tr>
+       <td>Isplata plaća zaposlenicima</td>
+  </tr>
+   <tr>
+       <td>Samostalno definiranje ovlaštenja</td>
+  </tr>
+   <tr>
+       <td><b>DEVIZNI PLATNI PROMET JOŠ IMA:</b></td>
+  </tr>
+   <tr>
+       <td>Obavijesti o uplati novca</td>
+  </tr>
+   <tr>
+       <td>Nalog za raspored</td>
+  </tr>
+   <tr>
+       <td>Trajni nalog za raspored</td>
+  </tr>
+</table>
+</div>
+<br><br><br>
+</body>
+</html>
